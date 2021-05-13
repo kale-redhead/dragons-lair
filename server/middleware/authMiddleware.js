@@ -6,4 +6,10 @@ module.exports = {
         next();
     },
 
+    adminsOnly: (res, req, next) => {
+        if(!req.sessions.user.adminsOnly){
+            return res.status(403).send('You are not an admin');
+        }
+        next();
+    }
 };
