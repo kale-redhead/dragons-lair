@@ -3,6 +3,7 @@ const express = require('express');
 const session = require('express-session');
 const massive = require('massive');
 const authCtrl = require('./controllers/authController');
+const treasureCtrl = require('./controllers/treasureController');
 
 const app = express();
 const PORT = 4000;
@@ -30,5 +31,7 @@ app.use(
 app.post('/auth/register', authCtrl.register);
 app.post('/auth/login', authCtrl.login);
 app.get('/auth/logout', authCtrl.logout);
+
+app.get('/api/treasure/dragon', treasureCtrl.dragonTreasure);
 
 app.listen(PORT, () => console.log(`app is listening on ${PORT}`));
