@@ -39,7 +39,7 @@ export default class Header extends Component {
           password: ''
         });
       })
-      .catch(err => alert(arror.response.request.response));
+      .catch(err => alert(err.response.request.response));
   }
 
   register() {

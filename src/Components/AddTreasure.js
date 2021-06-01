@@ -14,6 +14,7 @@ export default class AddTreasure extends Component {
   }
 
   addTreasure() {
+    const { treasureURL } = this.state;
     axios
       .post('/api/treasure/user', {treasureURL: treasureURL})
       .then(res => {
